@@ -1,0 +1,27 @@
+{% extends "base2.html" %} {% load static %} {% block content %}
+
+<section class="portfolio">
+  <h1 style="text-align: center">{{ project.title }}</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <img src="{{ project.image.url }}" alt="" width="100%" />
+    </div>
+    <div class="col-md-4">
+      <h5>About the project:</h5>
+      <p>{{ project.description | safe }}</p>
+      <br />
+      <h5>Technology used:</h5>
+      <p>{{ project.technology }}</p> </br>
+      <h5>Download report</h5>
+      <a href="{{project.adminupload.url}}" download="{{project.adminupload.url}}">Download</a>
+    </div>
+  </div>
+  {% if project.video %}
+    <div class="container">
+      <video class="embed-responsive embed-responsive-16by9" controls="controls">
+        <source src="{{project.video.url}}" type="video/mp4" />
+      </video>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

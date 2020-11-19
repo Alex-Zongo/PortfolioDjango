@@ -1,0 +1,60 @@
+{% extends "base2.html" %} {% block content %}
+
+<div class="">
+  <h1>{{ post.title }}</h1>
+
+  {% for category in post.categories.all %}
+  <small>
+    {{ post.created_on.date }} |&nbsp; Categories:&nbsp;
+
+    <a href="{% url 'blog_category' category.name %}"> {{ category.name }} </a
+    >&nbsp;
+  </small>
+  {% endfor %}
+  <br />
+  <br />
+  {% if post.video %}
+  <div class="container">
+    <video class="embed-responsive embed-responsive-16by9" controls="controls">
+      <source src="{{post.video.url}}" type="video/mp4" />
+    </video>
+  </div>
+  {% endif %}
+  <br />
+  {%if post.header_image%}
+  <img src="{{ post.header_image.url }}" />
+  {% endif %} <br /><br />
+  <p>{{ post.body |safe | linebreaks }}</p>
+
+  <br />
+
+  <h3>Leave a comment:</h3>
+
+  <form action="/blog/{{ post.pk }}/" method="post">
+    {% csrf_token %}
+
+    <div class="form-group">{{ form.author }}</div>
+
+    <div class="form-group">{{ form.body }}</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <h3>Comments:</h3>
+
+  {% for comment in comments %}
+
+  <p>
+    On {{comment.created_on.date }}&nbsp;
+
+    <b>{{ comment.author }}</b> wrote:
+  </p>
+
+  <p>{{ comment.body }}</p>
+
+  <hr />
+
+  {% endfor %}
+</div>
+
+{% endblock %}
