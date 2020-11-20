@@ -1,0 +1,413 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Alex_Portfolio</title>
+{%endblock %} {% block content %}
+
+<!-- About Section
+   ================================================== -->
+<section id="about">
+  <div class="row">
+    <div class="three columns">
+      <img
+        class="profile-pic"
+        src="{% static 'projects/images/profilepic1.jpg' %}"
+        alt=""
+      />
+    </div>
+
+    <div class="nine columns main-col">
+      <h2>About Me</h2>
+
+      <p>
+        Alex Baowend Sôôm Marie Anicet ZONGO comes from Burkina Faso. Born in
+        Bobo Dioulasso city, he grew up in Ouagadougou city, the capital. Alex
+        defined himself as a disciplined, focused and responsible engineering
+        student. His passion and dedication to sciences come from deep in his
+        childhood during junior High-School where he was mesmerized by the
+        elegance and sophistication of mathematical sciences and their
+        applications. Hence, this dedication in applied mathematics led him to
+        Aerospace Engineering where he aspired to contribute to the development
+        of the field and especially in his country.
+      </p>
+
+      <div class="row">
+        <div class="columns contact-details">
+          <h2>Contact Details</h2>
+          <p class="address">
+            <span>Alex BWS. M. Anicet ZONGO</span><br />
+            <span>
+              Beijing University of Aeronautics and Astronautics<br />
+              Haidian District, Beijing 100191 CHINA </span
+            ><br />
+            <span>(+86)15022124758</span><br />
+            <span
+              ><a href="mailto: alexanicetzongo@gmail.com"
+                >alexanicetzongo@gmail.com</a
+              ></span
+            >
+          </p>
+        </div>
+        {% for cv in cv %}
+        <div class="columns download">
+          <p>
+            <a
+              href="{{cv.cvupload.url}}"
+              download="{{cv.cvupload.url}}"
+              class="button"
+              ><i class="fa fa-download"></i>Download Resume</a
+            >
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end .main-col -->
+  </div>
+</section>
+<!-- About Section End-->
+
+<!-- Resume Section
+   ================================================== -->
+<section id="resume">
+  <!-- Education
+      ----------------------------------------------- -->
+  <div class="row education">
+    <div class="three columns header-col">
+      <h1><span>Education</span></h1>
+    </div>
+
+    <div class="nine columns main-col">
+      <div class="row item">
+        <div class="twelve columns">
+          <h3>
+            Beijing University of Aeronautics and Astronautics(Beihang
+            University)
+          </h3>
+          <p class="info">
+            Currently Senior year - Bachelor Eng. Aircraft Design and
+            Engineering
+            <span>&bull;</span>
+            <em class="date">September 2020-today</em>
+          </p>
+
+          <p>
+            From September 2018, as a Chinese Scolarship(CSC) recipient, I
+            enrolled in Beihang University, in the School of aeronautics after a
+            transfer from National Cheng Kung University. Currently with a GPA
+            around 3.8 out of 4, the major courses learned are aerodynamics,
+            aircraft structural design, experimental fluid dynamics, finite
+            element analysis, automatic control, flight dynamics, Helicopter
+            flight dynamics and preliminary design, aeroelasticity...
+          </p>
+        </div>
+      </div>
+      <!-- item end -->
+
+      <div class="row item">
+        <div class="twelve columns">
+          <h3>National Cheng Kung University</h3>
+          <p class="info">
+            Freshman B.Eng. Aeronautical and Astronautical Engineering
+            <span>&bull;</span>
+            <em class="date">September 2017-June 2018</em>
+          </p>
+
+          <p>
+            Located in Tainan city in Taiwan, National Cheng Kung University is
+            one of the prestigious university of Taiwan. I did my freshman year
+            in the aeronautical department and ended up with a GPA of 4.0 out of
+            4.3. I also received a Mathematics Competition Rewards(2nd place in
+            the department) in May 2018 and an Outstanding Academic Achievement
+            Certificate(June 2018). The major courses learned, were calculus,
+            physics, c++, material sciences, solid mechanics, engineering
+            drawing(CAD)...
+          </p>
+        </div>
+      </div>
+      <!-- item end -->
+      <div class="row item">
+        <div class="twelve columns">
+          <h3>Fu Jen Catholic University</h3>
+          <p class="info">
+            Chinese language Center <span>&bull;</span>
+            <em class="date">September 2016-August 2017</em>
+          </p>
+
+          <p>
+            Fu Jen Catholic University is located in Taipei city in Taiwan. I
+            enrolled for a year of chinese languange-culture learning in the
+            language center which was required as a recipient of the Taiwan
+            Scholarship. The one-year chinese learning ended up with a Test Of
+            Chinese as Foreign language(TOCFL) which I reached level A2.
+          </p>
+        </div>
+      </div>
+      <!-- item end -->
+    </div>
+    <!-- main-col end -->
+  </div>
+  <!-- End Education -->
+
+  <!-- Work
+      ----------------------------------------------- -->
+  <div class="row work">
+    <div class="three columns header-col">
+      <h1><span>Work</span></h1>
+    </div>
+
+    <div class="nine columns main-col">
+      <div class="row item">
+        <div class="twelve columns">
+          <h3>High School Mathematics</h3>
+          <p class="info">
+            Teaching Assistant <span>&bull;</span>
+            <em class="date">september 2015 - June 2016</em>
+          </p>
+
+          <p>
+            As a Teaching Assistant, I helped marking the students homeworks and
+            exams under the direction of High-School Math teacher Ludovic ZONGO.
+            Moreover I contributed to the correction of exercises for the
+            redaction of a high -school mathematics book under the direction of
+            Serge SAWADOGO, High-School Math Teacher at "College Notre Dame de
+            l'Espérance", located at Ouagadougou, Burkina Faso.
+          </p>
+        </div>
+      </div>
+      <!-- item end -->
+    </div>
+    <!-- main-col end -->
+  </div>
+  <!-- End Work -->
+
+  <!-- Skills
+      ----------------------------------------------- -->
+  <div class="row skill">
+    <div class="three columns header-col">
+      <h1><span>Skills & Capabilities</span></h1>
+    </div>
+
+    <div class="nine columns main-col">
+      <p>
+        As an engineer, my goal is to produce efficent designs and technology
+        for the good of society. Check out some of my skills as an engineer.
+      </p>
+
+      <div class="bars">
+        <ul class="skills">
+          <li>
+            <span class="bar-expand photoshop"></span><em>Matlab & Simulink</em>
+          </li>
+          <li>
+            <span class="bar-expand illustrator"></span
+            ><em>SolidWorks & Catia</em>
+          </li>
+          <li><span class="bar-expand wordpress"></span><em>ANSYS</em></li>
+          <li><span class="bar-expand css"></span><em>C++</em></li>
+          <li><span class="bar-expand html5"></span><em>Python</em></li>
+          <li><span class="bar-expand jquery"></span><em>Django</em></li>
+        </ul>
+      </div>
+      <!-- end skill-bars -->
+    </div>
+    <!-- main-col end -->
+  </div>
+  <!-- End skills -->
+</section>
+<!-- Resume Section End-->
+
+<!-- Portfolio Section
+   ================================================== -->
+<section id="portfolio">
+  <div class="" style="text-align: center">
+    <strong
+      ><h1><span>Check Out Some of My Works.</span></h1></strong
+    >
+    <h3 style="color: black">
+      Here are a selection of the lately projects I have worked on...
+    </h3>
+  </div>
+
+  <div class="row">
+    <!-- portfolio-wrapper -->
+    {% for project in projects %}
+    <div class="col-md-4">
+      <div class="card mb-2">
+        <img class="card-img-top" src="{{ project.image.url }}" />
+
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+
+          <p class="card-text">{{ project.description | safe }}</p>
+
+          <a
+            href="{% url 'project_detail' project.pk %}"
+            class="btn btn-primary"
+          >
+            Read More
+          </a>
+        </div>
+        <div class="columns download">
+          <p>
+            <a
+              href="{{ project.adminupload.url }}"
+              download="{{ project.adminupload.url }}"
+              class="button"
+              ><i class="fa fa-download"></i>Download Report</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+  <!-- row End -->
+  {% include 'pagination.html' with page=projects%}
+</section>
+<!-- Portfolio Section End-->
+
+<!-- Testimonials Section
+   ================================================== -->
+<section id="testimonials">
+  <div class="text-container">
+    <div class="row">
+      <div class="two columns header-col">
+        <h1><span>Inspiration</span></h1>
+      </div>
+
+      <div class="ten columns flex-container">
+        <div class="flexslider">
+          <blockquote>
+            <p>
+              <span style="width: 100%">
+                Your work is going to fill a large part of your life, and the
+                only way to be truly satisfied is to do what you believe is
+                great work. And the only way to do great work is to love what
+                you do. If you haven't found it yet, keep looking. Don't settle.
+                As with all matters of the heart, you'll know when you find it.
+              </span>
+            </p>
+            <cite>Steve Jobs</cite>
+          </blockquote>
+        </div>
+        <!-- div.flexslider ends -->
+      </div>
+      <!-- div.flex-container ends -->
+    </div>
+    <!-- row ends -->
+  </div>
+  <!-- text-container ends -->
+</section>
+<!-- Testimonials Section End-->
+
+<!-- Contact Section
+   ================================================== -->
+<section id="contact">
+  <div class="container">
+    <h2 style="text-align: center; color:beige">Get In Touch.</h2>
+  </div>
+  <br/>
+  <br/>
+  <div class="row section-head">
+    <div class="ten columns">
+      <p class="lead">
+        Always happy and reluctant to connect with you, share, collaborate and
+        make great things. Feel free to GET IN TOUCH!!
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="eight columns">
+      <h1 style="text-align:center"><a href="mailto: alexanicetzongo@gmail.com">Send Me a Mail</a></h1>
+      <!-- form -->
+      <!-- <form action="" method="post" id="contactForm" name="contactForm">
+        <fieldset>
+          <div>
+            <label for="contactName"
+              >Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              value=""
+              size="35"
+              id="contactName"
+              name="contactName"
+            />
+          </div>
+
+          <div>
+            <label for="contactEmail"
+              >Email <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              value=""
+              size="35"
+              id="contactEmail"
+              name="contactEmail"
+            />
+          </div>
+
+          <div>
+            <label for="contactSubject">Subject</label>
+            <input
+              type="text"
+              value=""
+              size="35"
+              id="contactSubject"
+              name="contactSubject"
+            />
+          </div>
+
+          <div>
+            <label for="contactMessage"
+              >Message <span class="required">*</span></label
+            >
+            <textarea
+              cols="50"
+              rows="15"
+              id="contactMessage"
+              name="contactMessage"
+            ></textarea>
+          </div>
+
+          <div>
+            <button class="submit">Submit</button>
+            <span id="image-loader">
+              <img alt="" src="{% static 'projects/images/loader.gif' %} " />
+            </span>
+          </div>
+        </fieldset>
+      </form>
+       Form End -->
+      <!--
+       contact-warning -->
+    </div>
+
+    <aside class="four columns footer-widgets">
+      <div class="widget widget_contact">
+        <h4>Address and Phone</h4>
+        <p class="address">
+          Alex BWS. M. Anicet ZONGO<br />
+          Beihang University <br />
+          Haidian District, Beijing 100191 CHINA<br />
+          <span>(+86)15022124758</span>
+        </p>
+      </div>
+
+      <!--
+      <div class="widget widget_tweets">
+        <h4 class="widget-title">Latest Tweets</h4>
+
+        <ul id="twitter">
+          
+      </div>
+      -->
+    </aside>
+  </div>
+</section>
+<!-- Contact Section End-->
+
+{% endblock content %}

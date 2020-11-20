@@ -1,0 +1,22 @@
+{% extends "base2.html" %} {% block content %}
+
+<div class="">
+  <h1>Blog Index</h1>
+
+  <hr />
+
+  {% for post in posts %}
+
+  <h2><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h2>
+
+  {% for category in post.categories.all %}
+  <small>
+    {{ post.created_on.date }} |&nbsp; Categories:&nbsp;
+    <a href="{% url 'blog_category'  category.name %}"> {{ category.name }} </a
+    >&nbsp;
+  </small>
+  {% endfor %}
+  <p>{{ post.body | safe | slice:":50" }}...</p>
+  {% endfor %} {% include 'pagination.html' with page=posts %}
+</div>
+{% endblock %}
