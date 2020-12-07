@@ -18,9 +18,9 @@ class Project(models.Model):
         default='',
         blank='False',
         upload_to='media')
-    video = models.FileField(
-        default='',
-        upload_to='media')
+    #video = models.FileField(
+     #   default='',
+     #   upload_to='media')
     adminupload = models.FileField(default='',             upload_to='media')
 
     #image = models.FilePathField(path="/projects/images/portfolio")
